@@ -25,7 +25,6 @@ def day11(arg, max_distance=False):
         max_dist = max(max_dist, max(abs(pos[0]), abs(pos[1]), abs(pos[2])))
     dist = max(abs(pos[0]), abs(pos[1]), abs(pos[2]))
     return max_dist if max_distance else dist
-    # return distance
 
 
 def day11p2(arg):
@@ -45,8 +44,10 @@ def test_day11(data, result):
 
 
 @pytest.mark.parametrize('data,result', [
-    (1, None),
-
+    ("ne,ne,ne", 3),
+    ("ne,ne,sw,sw", 2),
+    ("ne,ne,s,s", 2),
+    ("se,sw,se,sw,sw", 3),
 ])
 def test_day11p2(data, result):
     """Test day11 part 2."""
